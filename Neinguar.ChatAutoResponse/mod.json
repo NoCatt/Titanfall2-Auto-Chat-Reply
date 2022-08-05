@@ -1,0 +1,41 @@
+{
+    "Name": "Neinguar.ChatAutoResponse",
+    "Description":"checks for words and sends a response depending on the word",
+    "LoadPriority": 0,
+    "RequiredOnClient": false,
+    "Version": "1.0.0",
+
+        "ConVars":[
+        {
+            "Name": "words",
+            "DeafaultValue": "Based,Ratio,Hard,Based"
+        },
+        {
+            "Name": "response",
+            "DeafaultValue" : "Based??? Based on what?,Ratio + L + didn't ask + who cares + cope + stay mad,hard? sounds like a skill issue to me"
+
+        },
+        {
+            "Name" : "RandomTrollMessage",
+            "DeafaultValue": "I am very bad at this game :("
+        },
+        {
+            "Name" : "ChanceOfTrollMessage",
+            "DeafaultValue": 100
+        },
+        {
+            "Name" : "BannedWords",
+            "DeafaultValue": ""
+        }
+       ],
+        "Scripts":[
+            {
+            "Path": "NeinguarChatTroll.nut",
+            "RunOn":"Server && MP",
+            "ServerCallback":{
+                "After": "NeinguarChatTroll_Init"
+                }
+            }
+        ]
+
+    }
